@@ -24,7 +24,6 @@
     "react-dom": "^18",
     "swiper": "^11.0.5",
     "tailwind-styled-components": "^2.2.0",
-    "urql": "^4.0.6",
     "verify-code-input-react": "^1.0.1"
   },
   "devDependencies": {
@@ -32,7 +31,6 @@
     "@graphql-codegen/import-types-preset": "^3.0.0",
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-operations": "^4.0.1",
-    "@graphql-codegen/typescript-urql": "^4.0.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
