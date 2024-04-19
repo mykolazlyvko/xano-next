@@ -1,14 +1,12 @@
 import Button from "@/components/button"
 import AvatarCard from "@/components/card/avatar"
-import { Post, PostDocument } from "@/generated/graphql"
-import { client, ssrCache } from "@/lib/urql"
 import { GetStaticPaths, GetStaticProps } from "next"
 import CaretLeft from "@/asset/icons/system/CaretLeft.svg"
 import GenericIconButton from "@/components/button/genericIcon"
 import SaveButton from "@/components/button/save"
 import { useRouter } from "next/router"
 
-export default function Post({ post }: { post: Post }) {
+export default function Post({ post }) {
 	const router = useRouter()
 
 	return (
@@ -61,12 +59,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-	const data = await client.query(PostDocument, { slug: params!.slug }).toPromise()
 
 	return {
 		props: {
-			urqlState: ssrCache.extractData(),
-			post: data.data?.post,
+			// post: data.data?.post,
 		},
 		revalidate: 60 * 60 * 4, // 4 hours
 	}
